@@ -1,10 +1,14 @@
 Simple Features: Spatial Data in R the Modern Way
 
+by Edzer Pebesma
+
 Support for handling and analyzing spatial data in R goes back a long
-way. In 2003 a group of package developers sat together and decided
+way. In 2003, a group of package developers sat together and decided
 to adopt a shared understanding of how spatial data are organized
-in R, which led to the package sp, and helper packages rgdal and
-rgeos. It offers simple classes for points, lines, polygons and
+in R, which led to the package [sp] (https://mran.revolutionanalytics.com/package/sp/), 
+and helper packages [rgdal] (https://mran.revolutionanalytics.com/package/rgdal/) and
+[rgeos] (https://mran.revolutionanalytics.com/package/rgeos/). 
+It offers simple classes for points, lines, polygons and
 grids, possibly associated with further properties (attributes),
 and takes care of coordinate reference systems.  The sp package has
 helped many, and has made it attractive to develop new packages
@@ -27,17 +31,19 @@ which complicates exchange and handling of simple feature data.
 The "Simple Features for R" project [5], one of the projects
 supported by the R consortium in its first funding round, addresses
 these problems by implementing simple features as native R data. The
-resulting package, called "sf" [6] provides functionality similar
+resulting package, [sf] (https://mran.revolutionanalytics.com/package/sf/) [6] 
+provides functionality similar
 to the sp, rgdal for vector data, and rgeos packages together, but for simple
 features. Instead of S4 classes used by the sp family, it extends R's
 data.frame directly, adding a list-column for geometries. This makes
 it easier to manipulate them with other tools that assume all data
 objects are data.frames, such as dplyr and tidyverse.  Package sf
-links to the GDAL, PROJ and GEOS libraries, three major swiss army
-knifes of open source geospatial, for respectively input/output,
+links to the [GDAL] (http://www.gdal.org/), [PROJ.4](https://github.com/OSGeo/proj.4/wiki) 
+and [GEOS] (https://trac.osgeo.org/geos/) libraries, three major geospatial swiss army
+knifes for respectively input/output,
 cartographic (re)projections, and geometric operations (e.g. unions,
-buffers, intersections and topological relations). As such, it can
-be seen as a successor to sp, rgdal for vector data, and rgeos.
+buffers, intersections and topological relations). sf can
+be seen as a successor to sp, rgdal (for vector data), and rgeos.
 
 The simple feature standard describes two encodings: well-known
 text, a human readable form that looks like "POINT(10 12)" or
@@ -57,11 +63,12 @@ dplyr-style verbs as well as integration with ggplot has started,
 and is a continuing effort.
 
 Besides using data.frames and considerably simpler data structures
-for spatial geometries, advantages of sf over the sp family include
-a simpler handling of coordinate reference systems (using either
+for spatial geometries, advantages of sf over the sp family include:
+simpler handling of coordinate reference systems (using either
 EPSG code or PROJ.4 string), the ability to return distance or area
-values with proper units (which can be meter, feet or US feet),
-and support for using functions of package geosphere to compute
+values with proper units (meter, feet or US feet),
+and support for [geosphere] (https://mran.revolutionanalytics.com/package/geosphere/) 
+functions to compute
 distances or areas for longitude/latitude data, using datum-dependent
 values for the Earth's radius and flattening.
 
@@ -71,6 +78,11 @@ greatful to the CRAN team for their strong support in getting the
 sf package compiled on all platforms. Support from the R Consortium
 has helped greatly to give this project priority, draw attention
 in a wider community, and facilitate travel and communication events.
+
+For additional technical information about sf, look [here] (http://r-spatial.org/r/2016/11/02/sfcran.html)
+on my website.
+
+Editors note: I will embed these links when we move to Wordpress.
 
 [1] https://en.wikipedia.org/wiki/Simple_Features
 [2] http://www.opengeospatial.org/standards/sfa
